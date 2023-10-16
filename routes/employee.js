@@ -1,11 +1,6 @@
 // Requires
 const express = require('express')
-
-// Exports
-export {router}
-
-// Imports
-import Employee from '../models/employee'
+const Employee = require('../models/employee')
 
 // Constants
 const router = express.Router()
@@ -15,7 +10,7 @@ const router = express.Router()
 
 router.get('/employees', async (req, res) => {
 	try {
-		const employees = await Employee.find({})
+		const employees = await Employee.Employee.find({})
 		res.status(200).send(employees)
 	}
 	catch (e) {
@@ -39,3 +34,4 @@ router.delete('/employees', async (req, res) => {
 
 })
 
+module.exports = router
