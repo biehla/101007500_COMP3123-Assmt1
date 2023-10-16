@@ -21,9 +21,9 @@ const employeeSchema = new mongoose.Schema({
 		validate: {
 			validator: async (v) => {
 				if (await Employee.exists({email: v}).exec()) {
-					return false;
+					return true;
 				}
-				return true;
+				return false;
 			}
 		}
 	},
