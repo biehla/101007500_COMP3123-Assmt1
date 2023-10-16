@@ -19,23 +19,19 @@ const port = process.env.PORT || 3000
 let app = express()
 
 
-const connectFn = (callback) => {
+const connectFn = async () => {
 	try {
-		mongoose.connect(env).then(() => {
-			console.log("Connected to Atlas")
-			callback()
-		})
+		await mongoose.connect(env)	
+		console.log("Connected to Atlas")
 	}
 	catch (e) {
 		console.error(e)
 	}
 }
 
-connectFn(() => {
-	app.listen(port)
-	console.log("Started server")
-})
-
+connectFn()
+app.listen(port)
+console.log("Started server")
 
 app.get("/", (req, res) => {
 	res.status(200).send("Welcome to my server!")
