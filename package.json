@@ -9,7 +9,7 @@
     "typescript": "^5.0.0"
   },
   "scripts": {
-    "start": "bun run server.js",
+    "start": "node run server.js",
     "dev": "bun run --watch server.js"
   },
   "dependencies": {
