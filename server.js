@@ -1,8 +1,16 @@
 // Requires
 const express = require('express')
-const env = process.env.CONN_STRING || require('./env.json').connString
 const mongoose = require('mongoose')
 const employeeRouter = require('./routes/employee')
+
+let env
+try {
+	const tempEnv = require('./env.json')
+	env = tempEnv.connString
+}
+catch {
+	env = process.env.CONN_STRING
+}
 
 // Constants
 const port = process.env.PORT || 3000
