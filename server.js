@@ -4,7 +4,7 @@ const express = require('express')
 // Imports
 
 // Constants
-const port = 8085
+const port = process.env.PORT || 8085
 
 // Mutable vars
 let app = express()
