@@ -1,6 +1,6 @@
 // Requires
 const express = require('express')
-const env = require('./env.json')
+const env = process.env.CONN_STRING || require('./env.json').connString
 const mongoose = require('mongoose')
 const employeeRouter = require('./routes/employee')
 
@@ -13,7 +13,7 @@ let app = express()
 
 const connectFn = async () => {
 	try {
-		await mongoose.connect(env.connString)	
+		await mongoose.connect(env)	
 		console.log("Connected to Atlas")
 	}
 	catch (e) {
