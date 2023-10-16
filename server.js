@@ -29,9 +29,9 @@ const connectFn = async () => {
 	}
 }
 
+connectFn()
 app.listen(port)
 console.log("Started server")
-connectFn()
 
 app.get("/", (req, res) => {
 	res.status(200).send("Welcome to my server!")
