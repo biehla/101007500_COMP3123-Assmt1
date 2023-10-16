@@ -1,6 +1,5 @@
 const mongoose = require('mongoose')
 
-const Employee = mongoose.model('Employee', employeeSchema)
 const employeeSchema = new mongoose.Schema({
 
 	first_name: {
@@ -31,8 +30,10 @@ const employeeSchema = new mongoose.Schema({
 
 	gender: {
 		type: String,
-		enum: [['Male', 'Female', 'Other'],
-			   '{VALUE} not supported'],
+		enum: {
+			values: ['Male', 'Female', 'Other'],
+			message: '{VALUE} not supported'
+		},
 		maxLength: 25
 	},
 
@@ -44,4 +45,5 @@ const employeeSchema = new mongoose.Schema({
 
 })
 
+const Employee = mongoose.model('Employee', employeeSchema)
 

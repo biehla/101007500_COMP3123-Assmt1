@@ -1,13 +1,15 @@
 // Requires
 const express = require('express')
 
+// Exports
+export {router}
+
 // Imports
 import Employee from '../models/employee'
-import {connect} from 'mongoose'
 
 // Constants
-const router = express.router()
-const dbString = 
+const router = express.Router()
+
 // Mutable vars
 
 
@@ -22,7 +24,7 @@ router.get('/employees', async (req, res) => {
 })
 
 router.post('/employees', async (req, res) => {
-	
+
 })
 
 router.get('/employees/:id', async (req, res) => {
@@ -36,3 +38,4 @@ router.post('/employees/:id', async (req, res) => {
 router.delete('/employees', async (req, res) => {
 
 })
+
