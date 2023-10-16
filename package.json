@@ -9,8 +9,8 @@
     "typescript": "^5.0.0"
   },
   "scripts": {
-    "start": "bun server.js",
-    "dev": "bun --watch server.js"
+    "start": "bun run server.js",
+    "dev": "bun run --watch server.js"
   },
   "dependencies": {
     "express": "^4.18.2"

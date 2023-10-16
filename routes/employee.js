@@ -1,13 +1,13 @@
 // Requires
 const express = require('express')
-const mongoose = require('mongoose')
 
 // Imports
 import Employee from '../models/employee'
+import {connect} from 'mongoose'
 
 // Constants
 const router = express.router()
-
+const dbString = 
 // Mutable vars
 
 
