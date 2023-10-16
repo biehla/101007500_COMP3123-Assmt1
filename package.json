@@ -1,7 +1,6 @@
 {
   "name": "assignment-1",
   "module": "server.js",
-  "type": "module",
   "devDependencies": {
     "bun-types": "latest"
   },
